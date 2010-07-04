@@ -14,7 +14,7 @@ safetail_g xs | null xs   = []
 
 -- using pattern matching
 safetail_p :: [a] -> [a]
-safetail_p (x:xs) = xs
+safetail_p (_:xs) = xs
 safetail_p [] = []
 
 -- define || three different ways with pattern matching
