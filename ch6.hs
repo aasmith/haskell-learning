@@ -21,6 +21,7 @@ replicatee n e   = e : replicatee (n - 1) e
 
 
 elemm :: (Eq a) => a -> [a] -> Bool
-elemm _ []     = False
-elemm e (x:xs) = if e == x then True else elemm e xs
+elemm _ []                 = False
+elemm e (x:xs) | e == x    = True
+               | otherwise = elemm e xs
 
