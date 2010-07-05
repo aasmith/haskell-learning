@@ -16,7 +16,8 @@ replicatee n e   = e : replicatee (n - 1) e
 
 (!!!) :: [a] -> Int -> a
 []     !!! _ = undefined
-(x:xs) !!! n = if n == 0 then x else xs !!! (n - 1)
+(x:_)  !!! 0 = x
+(_:xs) !!! n = xs !!! (n - 1)
 
 
 elemm :: (Eq a) => a -> [a] -> Bool
